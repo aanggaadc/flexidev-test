@@ -16,39 +16,49 @@
 
       <mat-divider></mat-divider>
 
-      <h3>Films</h3>
-      <mat-list>
-        <mat-list-item *ngFor="let film of person.films">{{
-          film
-        }}</mat-list-item>
-      </mat-list>
+      <div *ngIf="isLoadingAdditional">Loading Detail</div>
+      <div *ngIf="!isLoadingAdditional">
+        <div *ngIf="films.length">
+          <h3>Films</h3>
+          <mat-list>
+            <mat-list-item *ngFor="let film of films">{{
+              film.title
+            }}</mat-list-item>
+          </mat-list>
+        </div>
 
-      <mat-divider></mat-divider>
+        <div *ngIf="species.length">
+          <mat-divider></mat-divider>
+          <h3>Species</h3>
+          <mat-list>
+            <mat-list-item *ngFor="let species of species">{{
+              species.name
+            }}</mat-list-item>
+          </mat-list>
+        </div>
 
-      <h3>Species</h3>
-      <mat-list>
-        <mat-list-item *ngFor="let species of person.species">{{
-          species
-        }}</mat-list-item>
-      </mat-list>
+        <div *ngIf="starships.length">
+          <mat-divider></mat-divider>
 
-      <mat-divider></mat-divider>
+          <h3>Starships</h3>
+          <mat-list>
+            <mat-list-item *ngFor="let starship of starships">{{
+              starship.name
+            }}</mat-list-item>
+          </mat-list>
+        </div>
 
-      <h3>Starships</h3>
-      <mat-list>
-        <mat-list-item *ngFor="let starship of person.starships">{{
-          starship
-        }}</mat-list-item>
-      </mat-list>
+        <div *ngIf="vehicles.length">
+          <mat-divider></mat-divider>
 
-      <mat-divider></mat-divider>
-
-      <h3>Vehicles</h3>
-      <mat-list>
-        <mat-list-item *ngFor="let vehicle of person.vehicles">{{
-          vehicle
-        }}</mat-list-item>
-      </mat-list>
+          <h3>Vehicles</h3>
+          <mat-list>
+            <mat-list-item *ngFor="let vehicle of vehicles">{{
+              vehicle.name
+            }}</mat-list-item>
+          </mat-list>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

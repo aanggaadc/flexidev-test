@@ -18,4 +18,8 @@ export class SwapiService {
   getPerson(id: number): Observable<IPerson> {
     return this.http.get<IPerson>(`${this.baseUrl}/people/${id}`);
   }
+
+  getResource<T>(url: string): Observable<T> {
+    return this.http.get<T>(url);
+  }
 }
