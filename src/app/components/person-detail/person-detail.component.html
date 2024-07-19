@@ -1,25 +1,54 @@
-<div *ngIf="isLoading">loading</div>
+<div class="container">
+  <div *ngIf="isLoading">loading</div>
 
-<div *ngIf="!isLoading && isError">Person not found</div>
+  <div *ngIf="!isLoading && isError">Person not found</div>
 
-<div *ngIf="!isLoading && person">
-  <h1>{{ person.name }}</h1>
-  <p><strong>Birth Year:</strong> {{ person.birth_year }}</p>
-  <p><strong>Gender:</strong> {{ person.gender }}</p>
-  <h2>Films</h2>
-  <ul>
-    <li *ngFor="let film of person.films">{{ film }}</li>
-  </ul>
-  <h2>Species</h2>
-  <ul>
-    <li *ngFor="let species of person.species">{{ species }}</li>
-  </ul>
-  <h2>Starships</h2>
-  <ul>
-    <li *ngFor="let starship of person.starships">{{ starship }}</li>
-  </ul>
-  <h2>Vehicles</h2>
-  <ul>
-    <li *ngFor="let vehicle of person.vehicles">{{ vehicle }}</li>
-  </ul>
+  <mat-card *ngIf="!isLoading && person" class="person-detail-card">
+    <mat-card-title>{{ person.name }}</mat-card-title>
+    <mat-card-content>
+      <p>Height: {{ person.height }}</p>
+      <p>Mass: {{ person.mass }}</p>
+      <p>Hair Color: {{ person.hair_color }}</p>
+      <p>Skin Color: {{ person.skin_color }}</p>
+      <p>Eye Color: {{ person.eye_color }}</p>
+      <p>Birth Year: {{ person.birth_year }}</p>
+      <p>Gender: {{ person.gender }}</p>
+
+      <mat-divider></mat-divider>
+
+      <h3>Films</h3>
+      <mat-list>
+        <mat-list-item *ngFor="let film of person.films">{{
+          film
+        }}</mat-list-item>
+      </mat-list>
+
+      <mat-divider></mat-divider>
+
+      <h3>Species</h3>
+      <mat-list>
+        <mat-list-item *ngFor="let species of person.species">{{
+          species
+        }}</mat-list-item>
+      </mat-list>
+
+      <mat-divider></mat-divider>
+
+      <h3>Starships</h3>
+      <mat-list>
+        <mat-list-item *ngFor="let starship of person.starships">{{
+          starship
+        }}</mat-list-item>
+      </mat-list>
+
+      <mat-divider></mat-divider>
+
+      <h3>Vehicles</h3>
+      <mat-list>
+        <mat-list-item *ngFor="let vehicle of person.vehicles">{{
+          vehicle
+        }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
 </div>

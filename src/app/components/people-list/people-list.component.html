@@ -1,9 +1,16 @@
 <div *ngIf="isLoading">Loading</div>
 
-<div *ngIf="!isLoading">
-  <div class="people-list" *ngFor="let person of people">
-    <a [routerLink]="['/person', person.url.split('/')[5]]">
-      {{ person.name }}
-    </a>
-  </div>
+<div *ngIf="!isLoading" class="people-list-container">
+  <mat-card *ngFor="let person of people" class="person-card">
+    <mat-card-title>{{ person.name }}</mat-card-title>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/person', person.url.split('/').slice(-2, -1)[0]]"
+      >
+        View Details
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>

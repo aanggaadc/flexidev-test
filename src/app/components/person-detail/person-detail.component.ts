@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 import { SwapiService } from '../../services/swapi.service';
 import { IPerson } from '../../models';
 
 @Component({
   selector: 'app-person-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule, MatListModule],
   templateUrl: './person-detail.component.html',
   styleUrl: './person-detail.component.scss',
 })

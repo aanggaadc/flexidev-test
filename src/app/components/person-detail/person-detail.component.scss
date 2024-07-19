@@ -1,0 +1,42 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.person-detail-card {
+  padding: 16px;
+  width: fit-content;
+  margin-inline: auto;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  mat-card-title {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  mat-card-header {
+    background-color: #f5f5f5;
+  }
+
+  mat-card-content {
+    margin-bottom: 16px;
+  }
+
+  mat-list-item {
+    padding: 0;
+  }
+
+  mat-divider {
+    margin: 10px 0;
+  }
+}
+
+.content-list {
+  margin-bottom: 10px;
+}
