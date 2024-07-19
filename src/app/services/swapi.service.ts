@@ -11,8 +11,8 @@ export class SwapiService {
 
   constructor(private http: HttpClient) {}
 
-  getPeople(): Observable<IPeople> {
-    return this.http.get<IPeople>(`${this.baseUrl}/people/`);
+  getPeople(page: number = 1): Observable<IPeople> {
+    return this.http.get<IPeople>(`${this.baseUrl}/people?page=${page}`);
   }
 
   getPerson(id: number): Observable<IPerson> {

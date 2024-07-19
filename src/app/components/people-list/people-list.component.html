@@ -2,18 +2,38 @@
   <h1 class="title">People</h1>
   <div *ngIf="isLoading">Loading</div>
 
-  <div *ngIf="!isLoading" class="people-list-container">
-    <mat-card *ngFor="let person of people" class="person-card">
-      <mat-card-title>{{ person.name }}</mat-card-title>
-      <mat-card-actions>
-        <button
-          mat-raised-button
-          color="primary"
-          [routerLink]="['/person', person.url.split('/').slice(-2, -1)[0]]"
-        >
-          View Details
-        </button>
-      </mat-card-actions>
-    </mat-card>
+  <div *ngIf="!isLoading">
+    <div class="people-list-container">
+      <mat-card *ngFor="let person of people" class="person-card">
+        <mat-card-title>{{ person.name }}</mat-card-title>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="['/person', person.url.split('/').slice(-2, -1)[0]]"
+          >
+            View Details
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="pagination-controls">
+      <button
+        mat-raised-button
+        (click)="goToPreviousPage()"
+        [disabled]="currentPage === 1"
+      >
+        Previous
+      </button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button
+        mat-raised-button
+        (click)="goToNextPage()"
+        [disabled]="currentPage === totalPages"
+      >
+        Next
+      </button>
+    </div>
   </div>
 </div>

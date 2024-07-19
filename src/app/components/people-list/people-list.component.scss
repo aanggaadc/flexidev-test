@@ -6,6 +6,7 @@
 
 .people-list-container {
   display: flex;
+  flex-direction: c;
   flex-wrap: wrap;
   gap: 16px;
   padding: 16px;
@@ -30,4 +31,17 @@
       }
     }
   }
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+button[disabled] {
+  background-color: #e0e0e0;
+  color: #757575;
 }
