@@ -24,7 +24,6 @@
 
       button {
         background-color: gray;
-        border: none;
         color: white;
         padding: 8px;
         border-radius: 10px;
@@ -41,7 +40,14 @@
   gap: 1rem;
 }
 
-button[disabled] {
-  background-color: #e0e0e0;
-  color: #757575;
+button {
+  background-color: gray;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+
+  &:disabled {
+    background-color: #e0e0e0;
+    color: #757575;
+  }
 }

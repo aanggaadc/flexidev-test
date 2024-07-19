@@ -20,32 +20,26 @@
       <div *ngIf="!isLoadingAdditional">
         <div *ngIf="films.length">
           <h3>Films</h3>
-          <mat-list>
-            <mat-list-item *ngFor="let film of films">{{
-              film.title
-            }}</mat-list-item>
-          </mat-list>
+          <ul>
+            <li *ngFor="let film of films">{{ film.title }}</li>
+          </ul>
         </div>
 
         <div *ngIf="species.length">
           <mat-divider></mat-divider>
           <h3>Species</h3>
-          <mat-list>
-            <mat-list-item *ngFor="let species of species">{{
-              species.name
-            }}</mat-list-item>
-          </mat-list>
+          <ul>
+            <li *ngFor="let species of species">{{ species.name }}</li>
+          </ul>
         </div>
 
         <div *ngIf="starships.length">
           <mat-divider></mat-divider>
 
           <h3>Starships</h3>
-          <mat-list>
-            <mat-list-item *ngFor="let starship of starships">{{
-              starship.name
-            }}</mat-list-item>
-          </mat-list>
+          <ul>
+            <li *ngFor="let starship of starships">{{ starship.name }}</li>
+          </ul>
         </div>
 
         <div *ngIf="vehicles.length">
