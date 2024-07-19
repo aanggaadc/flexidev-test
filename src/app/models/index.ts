@@ -1,4 +1,9 @@
-export interface IPerson {
+interface IBaseEntity {
+  created: string;
+  edited: string;
+  url: string;
+}
+export interface IPerson extends IBaseEntity {
   name: string;
   height: string;
   mass: string;
@@ -12,9 +17,6 @@ export interface IPerson {
   species: string[];
   vehicles: string[];
   starships: string[];
-  created: string;
-  edited: string;
-  url: string;
 }
 
 export interface IPeople {
@@ -24,7 +26,8 @@ export interface IPeople {
   results: IPerson[];
 }
 
-export interface IFilm {
+// Film-related interface
+export interface IFilm extends IBaseEntity {
   title: string;
   episode_id: number;
   opening_crawl: string;
@@ -36,12 +39,10 @@ export interface IFilm {
   starships: string[];
   vehicles: string[];
   species: string[];
-  created: string;
-  edited: string;
-  url: string;
 }
 
-export interface ISpecies {
+// Species-related interface
+export interface ISpecies extends IBaseEntity {
   name: string;
   classification: string;
   designation: string;
@@ -50,16 +51,14 @@ export interface ISpecies {
   hair_colors: string;
   eye_colors: string;
   average_lifespan: string;
-  homeworld: any;
+  homeworld: string;
   language: string;
   people: string[];
   films: string[];
-  created: string;
-  edited: string;
-  url: string;
 }
 
-export interface IStarship {
+// Starship-related interface
+export interface IStarship extends IBaseEntity {
   name: string;
   model: string;
   manufacturer: string;
@@ -75,12 +74,10 @@ export interface IStarship {
   starship_class: string;
   pilots: string[];
   films: string[];
-  created: string;
-  edited: string;
-  url: string;
 }
 
-export interface IVehicle {
+// Vehicle-related interface
+export interface IVehicle extends IBaseEntity {
   name: string;
   model: string;
   manufacturer: string;
@@ -94,7 +91,4 @@ export interface IVehicle {
   vehicle_class: string;
   pilots: string[];
   films: string[];
-  created: string;
-  edited: string;
-  url: string;
 }
