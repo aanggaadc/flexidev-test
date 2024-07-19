@@ -1,1 +1,25 @@
-<p>person-detail works!</p>
+<div *ngIf="isLoading">loading</div>
+
+<div *ngIf="!isLoading && isError">Person not found</div>
+
+<div *ngIf="!isLoading && person">
+  <h1>{{ person.name }}</h1>
+  <p><strong>Birth Year:</strong> {{ person.birth_year }}</p>
+  <p><strong>Gender:</strong> {{ person.gender }}</p>
+  <h2>Films</h2>
+  <ul>
+    <li *ngFor="let film of person.films">{{ film }}</li>
+  </ul>
+  <h2>Species</h2>
+  <ul>
+    <li *ngFor="let species of person.species">{{ species }}</li>
+  </ul>
+  <h2>Starships</h2>
+  <ul>
+    <li *ngFor="let starship of person.starships">{{ starship }}</li>
+  </ul>
+  <h2>Vehicles</h2>
+  <ul>
+    <li *ngFor="let vehicle of person.vehicles">{{ vehicle }}</li>
+  </ul>
+</div>

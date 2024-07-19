@@ -1,1 +1,9 @@
-<p>people-list works!</p>
+<div *ngIf="isLoading">Loading</div>
+
+<div *ngIf="!isLoading">
+  <div class="people-list" *ngFor="let person of people">
+    <a [routerLink]="['/person', person.url.split('/')[5]]">
+      {{ person.name }}
+    </a>
+  </div>
+</div>
