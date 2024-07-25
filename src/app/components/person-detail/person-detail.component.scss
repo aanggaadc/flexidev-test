@@ -1,3 +1,12 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
 .person-detail-card {
   padding: 20px;
   max-height: 500px;
