@@ -18,10 +18,16 @@
 }
 
 .people-list-container {
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   padding: 16px;
+
+  @media screen and (min-width: 965px) {
+    justify-content: flex-start;
+  }
 
   .person-card {
     width: 300px;
@@ -29,6 +35,14 @@
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 8px;
+
+    @media screen and (min-width: 965px) {
+      width: calc((100% / 3) - 16px + (16px / 3));
+    }
+
+    @media screen and (min-width: 1920px) {
+      width: calc((100% / 4) - 16px + (16px / 4));
+    }
 
     mat-card-actions {
       display: flex;
