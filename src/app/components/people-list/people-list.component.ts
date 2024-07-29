@@ -55,6 +55,7 @@ export class PeopleListComponent implements OnInit {
 
   goBack(): void {
     this.router.navigate(['/']);
+    this.isError = false;
   }
 
   goToPage(page: number): void {
