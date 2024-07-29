@@ -53,6 +53,10 @@ export class PeopleListComponent implements OnInit {
     });
   }
 
+  goBack(): void {
+    this.router.navigate(['/']);
+  }
+
   goToPage(page: number): void {
     if (page > 0 && page <= this.totalPages) {
       this.fetchPeople(page);
